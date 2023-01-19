@@ -1,0 +1,523 @@
+header a.nav-link {
+    line-height: 2em;
+}
+
+.disclosure-text {
+    color:$gray-200;
+    font-size:16px;
+}
+
+/* CTA Button in Main Nav
+****************************/
+.cta-menu>a.nav-link {
+    @extend .btn,
+    .btn-outline-warning;
+
+    @include media-breakpoint-up(sm) {
+        margin-left: 1em;
+
+    }
+
+    &:hover {
+        color: $white !important;
+    }
+}
+
+/* Testimonials Slick Slider
+****************************/
+.slick-prev {
+    left: -75px;
+
+    &:before {
+        content: '';
+        background-image: url(#{$theme-directory}/assets/images/arrow-left.png);
+    }
+}
+
+.slick-next {
+    right: -75px;
+
+    &:before {
+        content: '';
+        background-image: url(#{$theme-directory}/assets/images/arrow-right.png);
+    }
+}
+
+.slick-arrow {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+
+    &:before {
+        font-size: 60px;
+        width: 60px;
+        height: 60px;
+        display: block;
+        transition: ease-in-out 250ms;
+    }
+
+    &:hover:before {
+        transform: scale(1.2);
+    }
+}
+
+/* Add .headings-match-paragraphs to parent containers & sections to override the default heading colors. 
+****************************/
+.headings-match-paragraphs .section-content {
+    position: relative;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: inherit;
+    }
+}
+
+/* Home Page 
+****************************/
+.blue-wave-image {
+    position: relative;
+    color: $white;
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        background-image: url(#{$theme-directory}/assets/images/blue-wave-image.png);
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+        width: calc(100%);
+        top: -75vw;
+
+        @include media-breakpoint-up(md) {
+            top: -50vw;
+        }
+
+        @include media-breakpoint-up(lg) {
+            top: -15vw;
+        }
+    }
+
+    .container {
+        position: relative;
+    }
+}
+
+.blue-wave-bottom {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 10vw !important;
+
+    &:before {
+        content: '';
+        position: absolute;
+        // Hide white edges in SVG file...
+        left: -3px;
+        right: -3px;
+        bottom: -1px;
+        background-image: url(#{$theme-directory}/assets/images/blue-wave-bottom.svg);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: contain;
+        padding-bottom: 10vw;
+        width: calc(100% + 6px);
+    }
+
+    .container {
+        position: relative;
+    }
+}
+
+/* Add a black transparent overlay to the right side of a section
+****************************/
+.black-overlay-right {
+    position: relative;
+
+    &:before {
+        content: '';
+        background-color: rgba($black, .5);
+        position: absolute;
+        left: 0px;
+        width: 100%;
+        right: 0px;
+        bottom: 0px;
+        top: 0px;
+        z-index: 1;
+
+        @include media-breakpoint-up(md) {
+            left: 50%;
+            width: 50%;
+        }
+
+    }
+
+    .container {
+        position: relative;
+
+        .section-content {
+            z-index: 2;
+            position: relative;
+        }
+    }
+}
+
+/* Add a black transparent overlay to the left side of a section
+****************************/
+.black-overlay-left {
+    position: relative;
+
+    &:before {
+        content: '';
+        background-color: rgba($black, .5);
+        position: absolute;
+        left: 0px;
+        width: 100%;
+        right: 0px;
+        bottom: 0px;
+        top: 0px;
+
+        @include media-breakpoint-up(md) {
+            right: 50%;
+            width: 50%;
+        }
+
+    }
+
+    .container {
+        position: relative;
+    }
+}
+
+.gray-wave-bottom {
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        left: 0px;
+        right: 0px;
+        bottom: -1px;
+        background-image: url(#{$theme-directory}/assets/images/gray-wave-bottom.svg);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: contain;
+        padding-bottom: 10vw;
+        width: calc(100%);
+    }
+
+    .container {
+        position: relative;
+
+        .section-image {
+            position: relative;
+            z-index: -1;
+        }
+
+        .section-content {
+            position: relative;
+            z-index: 3;
+        }
+    }
+}
+
+/* Products Page
+****************************/
+.white-wave-bottom {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 10vw !important;
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: -1px;
+        background-image: url(#{$theme-directory}/assets/images/white-wave-bottom.svg);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: cover;
+        padding-bottom: 15vw;
+        width: calc(100%);
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+    }
+}
+
+/* Beautiful Dark to light blue gradient
+***************************************/
+.bg-info-gradient {
+    background: rgb(14, 64, 93);
+    background: -moz-linear-gradient(90deg, rgba(14, 64, 93, 1) 1%, rgba(28, 108, 154, 1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(14, 64, 93, 1) 1%, rgba(28, 108, 154, 1) 100%);
+    background: linear-gradient(90deg, rgba(14, 64, 93, 1) 1%, rgba(28, 108, 154, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0e405d", endColorstr="#1c6c9a", GradientType=1);
+}
+
+/* hide bullet points and show BLUE checkmarks
+***************************************/
+ul.list-check {
+    list-style: none;
+    margin-bottom: 2em;
+
+    li {
+        position: relative;
+        font-weight: bold;
+        margin-bottom: 1em;
+
+        &:before {
+            content: '';
+            background-image:url(#{$theme-directory}/assets/images/list-check.png);
+            width: 27px;
+            height: 20px;
+            display: inline-block;
+            margin-right: 0.5em;
+            left: -40px;
+            top: 10px;
+            position: absolute;
+        }
+    }
+}
+
+/* hide bullet points and show PINK checkmarks
+***************************************/
+ul.list-check-pink {
+    list-style: none;
+    margin-bottom: 2em;
+
+    li {
+        position: relative;
+        font-weight: bold;
+        margin-bottom: 1em;
+
+        &:before {
+            content: '';
+            background-image:url(#{$theme-directory}/assets/images/list-check-pink.png);
+            width: 27px;
+            height: 20px;
+            display: inline-block;
+            margin-right: 0.5em;
+            left: -40px;
+            top: 10px;
+            position: absolute;
+        }
+    }
+}
+
+/* Creates a two-column list - amazing.
+***************************************/
+ul.list-2-col {
+    padding: 0;
+    max-width: 85%;
+    margin: 0 auto 2em;
+
+    @include media-breakpoint-up(md) {
+        column-count: 2;
+    }
+}
+
+/* use this class to make the carousel block full-width 
+***************************************/
+.full-width-carousel {
+    .carousel-caption {
+        right: 5%;
+        left: 5%;
+        top: 5%;
+        bottom: 5%;
+
+        .container {
+            max-width: 100%;
+        }
+    }
+}
+
+/* Accordion FAQs
+****************************/
+.accordion {
+    .accordion-button {
+        font-size: 1.333333rem;
+        font-family: $font-family-sans-serif;
+        color:$black;
+        padding: 0;
+    }
+    .accordion-body {
+        padding:1em 0 0 0;
+    }
+}
+
+/* Price page toggle switch
+****************************/
+.price-tiers-section {
+    position: relative;
+
+    /* The switch - the box around the slider */
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 8.333333em;
+        height: 3.75em;
+    }
+
+    /* Hide default HTML checkbox */
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    /* The slider */
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 3em;
+        width: 3em;
+        left: 0.35em;
+        bottom: 0.35em;
+        background-color: $white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    input+.slider {
+        background-color: $purple;
+    }
+
+    input:checked+.slider {
+        background-color: $purple;
+    }
+
+    input:focus+.slider {
+        box-shadow: 0 0 1px $primary;
+    }
+
+    input:checked+.slider:before {
+        transform: translateX(4.65em);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+    .text-center ul {
+        text-align: left;
+    }
+
+    .card-heading p {
+        margin-bottom: 1em;
+    }
+}
+
+/* Pricing Tiers 
+*********************/
+.bg-dark-wave>.card {
+    position: relative;
+
+    .card-body {
+        position: relative;
+        z-index: 1;
+    }
+
+    &:before {
+        background-image:url('#{$theme-directory}/assets/images/price-wave-gray.svg');
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: contain;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 0;
+        height: 100%;
+        content: '';
+    }
+}
+
+.bg-info-wave>.card {
+    position: relative;
+
+    .card-body {
+        position: relative;
+        z-index: 1;
+    }
+
+    &:before {
+        background-image:url('#{$theme-directory}/assets/images/price-wave-blue.svg');
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: contain;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 0;
+        height: 100%;
+        content: '';
+    }
+}
+
+.bg-primary-wave>.card {
+    position: relative;
+
+    .card-body {
+        position: relative;
+        z-index: 1;
+    }
+
+    &:before {
+        background-image:url('#{$theme-directory}/assets/images/price-wave-pink.svg');
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: contain;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 0;
+        height: 100%;
+        content: '';
+    }
+}
+
+/*Footer Widgets
+****************************/
+footer {
+    .widget-title {
+        font-size: 1rem;
+    }
+
+    .widget_nav_menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 0.875em;
+
+    }
+}
